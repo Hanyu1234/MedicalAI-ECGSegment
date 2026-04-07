@@ -22,7 +22,7 @@ const btn = (active: boolean): CSSProperties => ({
 });
 
 export default function App() {
-  const [tab, setTab] = useState<AppTab>("portfolio");
+  const [tab, setTab] = useState<AppTab>("landing");
 
   const landingActive = tab === "landing" || isAchievementDetailTab(tab);
 
