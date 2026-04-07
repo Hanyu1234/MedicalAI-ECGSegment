@@ -1,0 +1,56 @@
+/* Light slate theme: slate-50 / slate-100 background, blue–indigo accents */
+:root {
+  --bg: #f1f5f9;
+  --bg-top: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-indigo: #4338ca;
+  --nav-active-bg: rgba(37, 99, 235, 0.12);
+  --hero-gradient: linear-gradient(90deg, #2563eb 0%, #4338ca 100%);
+  --p-wave: rgba(37, 99, 235, 0.2);
+  --qrs: rgba(220, 38, 38, 0.22);
+  --t-wave: rgba(67, 56, 202, 0.18);
+  --pred: rgba(37, 99, 235, 0.15);
+  --pred-line: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: linear-gradient(to bottom right, var(--bg-top), var(--bg));
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+code,
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.9em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.katex {
+  color: var(--text);
+  font-size: 1.05em;
+}

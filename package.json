@@ -1,0 +1,10 @@
+{
+  "name": "medical-ai-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix ecg-medical-ai-web run dev",
+    "build": "npm --prefix ecg-medical-ai-web run build",
+    "preview": "npm --prefix ecg-medical-ai-web run preview"
+  }
+}

@@ -1,0 +1,33 @@
+# ------------------------------
+# Frontend (keep source, ignore build/deps)
+# ------------------------------
+node_modules/
+dist/
+ecg-medical-ai-web/node_modules/
+ecg-medical-ai-web/dist/
+
+# ------------------------------
+# Python / backend local artifacts
+# ------------------------------
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+runs/
+.venv/
+venv/
+
+# ------------------------------
+# Hide backend code from repo
+# Keep folder structure + non-code metadata only
+# ------------------------------
+ml/*.py
+ml/**/*.py
+!ml/requirements.txt
+!ml/.gitkeep
+
+# ------------------------------
+# OS / editor files
+# ------------------------------
+.DS_Store
+Thumbs.db
