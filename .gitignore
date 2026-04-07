@@ -18,13 +18,8 @@ runs/
 venv/
 
 # ------------------------------
-# Hide backend code from repo
-# Keep folder structure + non-code metadata only
+# Backend: keep placeholder source files public
 # ------------------------------
-ml/*.py
-ml/**/*.py
-!ml/requirements.txt
-!ml/.gitkeep
 
 # ------------------------------
 # OS / editor files
