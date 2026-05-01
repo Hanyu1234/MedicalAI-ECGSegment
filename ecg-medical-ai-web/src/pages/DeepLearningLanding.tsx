@@ -43,13 +43,14 @@ export function DeepLearningLanding({ onNavigate }: Props) {
         <div className="relative mx-auto max-w-6xl px-6 py-20">
           <div className="mb-4 flex items-center gap-3">
             <Brain className="h-8 w-8" />
-            <span className="text-sm uppercase tracking-wider opacity-90">Research Project</span>
+            <span className="text-sm uppercase tracking-wider opacity-90">Research Report Overview</span>
           </div>
-          <h1 className="mb-4 text-5xl">Medical AI / Deep Learning Research</h1>
-          <p className="mb-6 text-2xl opacity-90">ECG Segmentation</p>
+          <h1 className="mb-4 text-5xl">ECG Waveform Segmentation with Deep Learning</h1>
+          <p className="mb-6 text-2xl opacity-90">Medical AI / Team Research Project</p>
           <p className="max-w-4xl text-sm leading-relaxed opacity-95">
-            Built a deep learning pipeline to segment ECG waveforms (P/QRS/T boundaries) with reproducible
-            preprocessing, model training, and evaluation for medical signal analysis.
+            This project investigates automatic ECG waveform segmentation and heartbeat categorization using a reproducible
+            deep learning workflow. The study integrates standardized preprocessing, sequence-aware neural modeling, and
+            multi-metric evaluation to improve boundary-level interpretation of P/QRS/T components.
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-xs">
             {["PyTorch", "Medical AI", "ECG Signal Processing", "Segmentation", "CNN/LSTM", "Time Series"].map((tag) => (
@@ -61,11 +62,11 @@ export function DeepLearningLanding({ onNavigate }: Props) {
           <div className="flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-white" />
-              <span>Feb 2025 – May 2025</span>
+              <span>Study Period: Feb 2025 – May 2025</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-white" />
-              <span>Baltimore, MD</span>
+              <span>Team: Hanyu Zhu, Peter, Peter, Qi Sun</span>
             </div>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
@@ -88,15 +89,21 @@ export function DeepLearningLanding({ onNavigate }: Props) {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <section className="mb-16">
           <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
-            <h2 className="mb-6 text-3xl">Project Overview</h2>
-            <p className="text-lg leading-relaxed text-slate-700">
-              This webpage presents a team project on ECG segmentation and heartbeat classification completed with
-              teammates Peter, Peter, and Qi Sun. Data were sourced from{" "}
+            <h2 className="mb-4 text-3xl">Abstract</h2>
+            <p className="text-base leading-relaxed text-slate-700">
+              We present a team-based deep learning study on ECG segmentation and heartbeat categorization. Data were
+              sourced from{" "}
               <a href="https://www.kaggle.com/datasets/shayanfazeli/heartbeat/data" target="_blank" rel="noreferrer">
                 Kaggle
               </a>
-              , and the rest of the work focuses on
-              deep learning training and result presentation, including preprocessing, modeling, and evaluation.
+              , and experiments were designed to quantify how preprocessing, architecture choice, and training strategy
+              affect segmentation quality. The resulting system combines signal-conditioning, encoder-decoder modeling
+              with temporal context, and structured evaluation, then reports findings through an interactive technical
+              interface for reproducible review.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-slate-600">
+              <strong>Primary contribution:</strong> an end-to-end research pipeline that links dataset preparation,
+              model development, and error analysis into a single, deployment-ready workflow for medical AI prototyping.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <button type="button" className={ctaBtnClass} onClick={() => onNavigate("portfolio")}>
@@ -112,27 +119,27 @@ export function DeepLearningLanding({ onNavigate }: Props) {
         </section>
 
         <section className="mb-16">
-          <h2 className="mb-6 text-3xl">Why ECG Segmentation Matters</h2>
+          <h2 className="mb-6 text-3xl">Research Motivation and Task Definition</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-md">
-              <h3 className="mb-3 text-xl text-slate-900">Problem Motivation</h3>
+              <h3 className="mb-3 text-xl text-slate-900">Clinical and Technical Motivation</h3>
               <ul className="m-0 list-disc space-y-2 pl-5 text-slate-600">
-                <li>ECG is a core clinical signal for arrhythmia and cardiac condition assessment.</li>
-                <li>Manual P/QRS/T boundary annotation is costly and hard to scale.</li>
-                <li>Noise and morphology changes make robust segmentation challenging.</li>
+                <li>ECG is a foundational signal for cardiac assessment and longitudinal monitoring.</li>
+                <li>Manual P/QRS/T boundary annotation is labor-intensive and difficult to scale across cohorts.</li>
+                <li>Signal noise, baseline drift, and morphology variation reduce generalization of static rules.</li>
               </ul>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-md">
-              <h3 className="mb-3 text-xl text-slate-900">Task Definition</h3>
+              <h3 className="mb-3 text-xl text-slate-900">Formal Task Definition</h3>
               <ul className="m-0 list-disc space-y-2 pl-5 text-slate-600">
                 <li>
-                  <strong>Input:</strong> raw or preprocessed ECG windows.
+                  <strong>Input:</strong> fixed-length ECG windows after standardized preprocessing.
                 </li>
                 <li>
-                  <strong>Output:</strong> segmentation labels and boundary indices for waveform components.
+                  <strong>Output:</strong> segmentation labels and boundary indices for waveform components (P/QRS/T).
                 </li>
                 <li>
-                  <strong>Objective:</strong> stable boundary detection across varied signal quality conditions.
+                  <strong>Objective:</strong> robust boundary localization across heterogeneous signal conditions.
                 </li>
               </ul>
             </div>
@@ -140,7 +147,7 @@ export function DeepLearningLanding({ onNavigate }: Props) {
         </section>
 
         <section className="mb-16">
-          <h2 className="mb-6 text-3xl">ECG Segmentation Pipeline</h2>
+          <h2 className="mb-6 text-3xl">Methodological Pipeline</h2>
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg">
             <p className="text-sm leading-relaxed text-slate-700">
               Raw ECG → Filtering / Normalization → Windowing → Label Generation → Train / Val / Test Split → Model
